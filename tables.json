@@ -1,0 +1,16 @@
+{
+  "order": ["9.1", "9.2"],
+  "tables": {
+    "9.1": {
+      "ranges": [
+        { "from": 1, "to": 50, "label": "Option A", "set": { "a_9_1": "Option A" }, "mods": [{ "t": "9.2", "d": 5 }] },
+        { "from": 51, "to": 100, "label": "Option B", "set": { "a_9_1": "Option B" }, "mods": [] }
+      ]
+    },
+    "9.2": {
+      "ranges": [
+        { "from": 1, "to": 100, "label": "Example", "set": { "a_9_2": "Example" }, "mods": [] }
+      ]
+    }
+  }
+}
