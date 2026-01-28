@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NPC Sheet Helper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hdr">
+        <h1>NPC Sheet Helper</h1>
+        <p class="sub">Enter rolls, apply modifiers, get final results. Saves locally in your browser.</p>
+      </header>
+
+      <section class="card">
+        <h2>Roll Input</h2>
+
+        <div class="grid">
+          <label class="field">
+            <span>Raw d100 roll</span>
+            <input id="rawRoll" type="number" inputmode="numeric" min="1" max="100" value="50" />
+          </label>
+
+          <label class="field">
+            <span>Modifier (flat)</span>
+            <input id="flatMod" type="number" inputmode="numeric" value="0" />
+          </label>
+
+          <label class="field">
+            <span>Final roll (clamped 1–100)</span>
+            <output id="finalRoll">50</output>
+          </label>
+        </div>
+
+        <div class="btnrow">
+          <button id="applyBtn" type="button">Apply</button>
+          <button id="saveBtn" type="button" class="ghost">Save</button>
+          <button id="loadBtn" type="button" class="ghost">Load</button>
+          <button id="resetBtn" type="button" class="danger">Reset</button>
+        </div>
+
+        <div class="result">
+          <h3>Result</h3>
+          <pre id="resultBox">—</pre>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <small>Tip: In Google Sites, set the embed height to ~900–1100px for comfy scrolling.</small>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
