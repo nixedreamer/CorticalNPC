@@ -12,7 +12,7 @@
         <div class="hdrTop">
           <div>
             <h1>Cortical NPC Helper</h1>
-            <p class="sub">Roll helper + full NPC Profile. Saves locally in your browser.</p>
+            <p class="sub">One-button NPC Profile roller. Saves locally in your browser.</p>
           </div>
 
           <div class="tabs" role="tablist" aria-label="Sections">
@@ -62,265 +62,29 @@
       <section class="card hidden" id="panelProfile" role="tabpanel" aria-labelledby="tabProfile">
         <div class="sectionHead">
           <h2>NPC Profile</h2>
-          <div class="tiny">
-            Tip: Everything here is just text fields + save/load. We can later wire specific rolls/modifiers into these fields.
-          </div>
+          <div class="tiny">Tables load from <code>tables.json</code> in your repo.</div>
         </div>
 
         <div class="btnrow">
-  <button id="rollFullProfileBtn" type="button">Roll FULL Profile</button>
-  <button id="rollAppearanceBtn" type="button" class="ghost">Roll Appearance (9.1–9.18)</button>
-</div>
-
-<div class="result">
-  <h3>Roll log</h3>
-  <pre id="rollLog">—</pre>
-</div>
-
-
-        <h3 class="h3">Basics</h3>
-        <div class="grid4">
-          <label class="field"><span>Name</span><input data-k="name" /></label>
-          <label class="field"><span>Sexual characteristics</span><input data-k="sexualCharacteristics" /></label>
-          <label class="field"><span>Apparent age</span><input data-k="apparentAge" /></label>
-          <label class="field"><span>Actual age</span><input data-k="actualAge" /></label>
-
-          <label class="field"><span>Education</span><input data-k="education" /></label>
-          <label class="field"><span>Occupation</span><input data-k="occupation" /></label>
-          <label class="field"><span>Job level</span><input data-k="jobLevel" /></label>
-          <label class="field"><span>Skill level</span><input data-k="skillLevel" /></label>
+          <button id="rollFullProfileBtn" type="button">Roll FULL Profile</button>
+          <button id="reloadTablesBtn" type="button" class="ghost">Reload tables.json</button>
         </div>
 
-        <h3 class="h3">Impairments</h3>
-        <div class="grid4">
-          <div class="panel">
-            <div class="panelTitle">Mobility impairment</div>
-            <div class="grid2">
-              <label class="field"><span>Severity</span><input data-k="impMobSeverity" /></label>
-              <label class="field"><span>Effect</span><input data-k="impMobEffect" /></label>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panelTitle">Intellectual impairment</div>
-            <div class="grid2">
-              <label class="field"><span>Severity</span><input data-k="impIntSeverity" /></label>
-              <label class="field"><span>Effect</span><input data-k="impIntEffect" /></label>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panelTitle">Hearing impairment</div>
-            <div class="grid2">
-              <label class="field"><span>Severity</span><input data-k="impHearSeverity" /></label>
-              <label class="field"><span>Effect</span><input data-k="impHearEffect" /></label>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panelTitle">Vision impairment</div>
-            <div class="grid2">
-              <label class="field"><span>Severity</span><input data-k="impVisSeverity" /></label>
-              <label class="field"><span>Effect</span><input data-k="impVisEffect" /></label>
-            </div>
-          </div>
+        <div class="result">
+          <h3>Roll log</h3>
+          <pre id="rollLog">—</pre>
         </div>
 
-        <div class="btnrow">
-  <button id="rollAppearanceBtn" type="button">Roll Appearance (9.1–9.18)</button>
-</div>
-
-<div class="result">
-  <h3>Roll log</h3>
-  <pre id="rollLog">—</pre>
-</div>
-
-
-        <h3 class="h3">Appearance (9.x)</h3>
-        <div class="grid2">
-          <div class="panel">
-            <div class="panelTitle">9.1–9.9</div>
-            <div class="grid2">
-              <label class="field"><span>9.1 Gender expression</span><input data-k="a_9_1" /></label>
-              <label class="field"><span>9.2 Clothes quality</span><input data-k="a_9_2" /></label>
-              <label class="field"><span>9.3 Clothes condition</span><input data-k="a_9_3" /></label>
-              <label class="field"><span>9.4 Hygiene</span><input data-k="a_9_4" /></label>
-              <label class="field"><span>9.5 Dental health</span><input data-k="a_9_5" /></label>
-              <label class="field"><span>9.6 Hair length</span><input data-k="a_9_6" /></label>
-              <label class="field"><span>9.7 Hairstyle</span><input data-k="a_9_7" /></label>
-              <label class="field"><span>9.8 Smell</span><input data-k="a_9_8" /></label>
-              <label class="field"><span>9.9 Height</span><input data-k="a_9_9" /></label>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panelTitle">9.10–9.18</div>
-            <div class="grid2">
-              <label class="field"><span>9.10 Bone structure</span><input data-k="a_9_10" /></label>
-              <label class="field"><span>9.11 Weight</span><input data-k="a_9_11" /></label>
-              <label class="field"><span>9.12 Muscularity</span><input data-k="a_9_12" /></label>
-              <label class="field"><span>9.13 Posture</span><input data-k="a_9_13" /></label>
-              <label class="field"><span>9.14 Mannerisms</span><input data-k="a_9_14" /></label>
-              <label class="field"><span>9.15 Natural speed</span><input data-k="a_9_15" /></label>
-              <label class="field"><span>9.16 Facial structure</span><input data-k="a_9_16" /></label>
-              <label class="field"><span>9.17 Facial bilateral symmetry</span><input data-k="a_9_17" /></label>
-              <label class="field"><span>9.18 Distinguishing facial feature</span><input data-k="a_9_18" /></label>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="h3">Voice and language</h3>
-        <div class="grid2">
-          <label class="field"><span>Normal vocal pitch</span><input data-k="vocalPitch" /></label>
-          <label class="field"><span>Normal vocal volume</span><input data-k="vocalVolume" /></label>
-        </div>
-
-        <div class="panel">
-          <div class="panelTitle">Language ability (Levels 1–4)</div>
-          <div class="grid4">
-            <div class="subpanel">
-              <div class="subpanelTitle">Level 1</div>
-              <div class="tiny">T12.5: +20 · T13.2/4/6: -20</div>
-              <label class="field"><span>Comprehension</span><input data-k="lang1Comp" /></label>
-              <label class="field"><span>Clarify</span><input data-k="lang1Clar" /></label>
-            </div>
-
-            <div class="subpanel">
-              <div class="subpanelTitle">Level 2</div>
-              <label class="field"><span>Comprehension</span><input data-k="lang2Comp" /></label>
-              <label class="field"><span>Clarify</span><input data-k="lang2Clar" /></label>
-            </div>
-
-            <div class="subpanel">
-              <div class="subpanelTitle">Level 3</div>
-              <div class="tiny">T12.5: -10 · T13.2/4/6: +10</div>
-              <label class="field"><span>Comprehension</span><input data-k="lang3Comp" /></label>
-              <label class="field"><span>Clarify</span><input data-k="lang3Clar" /></label>
-            </div>
-
-            <div class="subpanel">
-              <div class="subpanelTitle">Level 4</div>
-              <div class="tiny">T12.5: -15 · T13.2/4/6: +15</div>
-              <label class="field"><span>Comprehension</span><input data-k="lang4Comp" /></label>
-              <label class="field"><span>Clarify</span><input data-k="lang4Clar" /></label>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="h3">Relationship / PC resist block</h3>
-        <div class="grid4">
-          <label class="field"><span>Tears</span><input data-k="tears" /></label>
-          <label class="field"><span>Tears to damage</span><input data-k="tearsToDamage" /></label>
-          <label class="field"><span>Relationship type</span><input data-k="relationshipType" /></label>
-          <label class="field"><span>Links</span><input data-k="links" /></label>
-          <label class="field"><span>Links to advance</span><input data-k="linksToAdvance" /></label>
-        </div>
-
-        <div class="panel">
-          <div class="panelTitle">Session-starting roll to add ___ points to PC resist</div>
-          <div class="grid4">
-            <label class="field"><span>6.1 Environment</span><input data-k="m_6_1" /></label>
-            <label class="field"><span>6.2 Reaction</span><input data-k="m_6_2" /></label>
-            <label class="field"><span>10.2 Comprehension</span><input data-k="m_10_2" /></label>
-            <label class="field"><span>12.1 Attitude</span><input data-k="m_12_1" /></label>
-
-            <label class="field"><span>12.2 Objectivity</span><input data-k="m_12_2" /></label>
-            <label class="field"><span>12.3 Pitch/volume</span><input data-k="m_12_3" /></label>
-            <label class="field"><span>13.1/3/5 PAS</span><input data-k="m_13_pas" /></label>
-            <label class="field"><span>13.2 Ethos resistance</span><input data-k="m_13_2" /></label>
-
-            <label class="field"><span>13.4 Logos resistance</span><input data-k="m_13_4" /></label>
-            <label class="field"><span>13.6 Pathos resistance</span><input data-k="m_13_6" /></label>
-            <label class="field"><span>14.2 PC resistance</span><input data-k="m_14_2" /></label>
-            <label class="field"><span>14.4 Response expression</span><input data-k="m_14_4" /></label>
-
-            <label class="field"><span>17.1 Aggression STR</span><input data-k="m_17_1" /></label>
-            <label class="field"><span>Combat role</span><input data-k="combatRole" /></label>
-            <label class="field"><span>Combat tendency</span><input data-k="combatTendency" /></label>
-          </div>
-        </div>
-
-        <h3 class="h3">Notes</h3>
-        <label class="field">
-          <span>Notes</span>
-          <textarea data-k="notes" rows="5"></textarea>
-        </label>
-
-        <h3 class="h3">Companions</h3>
-        <div class="btnrow">
-          <button id="addCompanionBtn" type="button" class="ghost">Add companion</button>
-        </div>
-        <div id="companionsWrap" class="stack"></div>
+        <!-- (Your existing Profile fields stay exactly as you already have them) -->
+        <!-- Keep all your inputs/textarea with data-k=... as-is -->
+        <!-- I’m not re-pasting the entire profile HTML here to keep this message usable. -->
+        <!-- IMPORTANT: Do not change any data-k keys. -->
       </section>
 
       <footer class="foot">
-        <small>In Google Sites, set embed height around 900–1200px for comfy scrolling.</small>
+        <small>In Google Sites, set embed height around 900–1200px.</small>
       </footer>
     </main>
-
-    <template id="companionTemplate">
-      <div class="companion card2">
-        <div class="compHdr">
-          <div class="compTitle">Companion</div>
-          <button type="button" class="danger small" data-action="removeCompanion">Remove</button>
-        </div>
-
-        <div class="grid2">
-          <label class="field"><span>Companion name</span><input data-k="comp_name" /></label>
-          <label class="field"><span>Relationship (Current NPC → Companion)</span><input data-k="comp_rel_npc_to_comp" /></label>
-          <label class="field"><span>Relationship (Companion → Current NPC)</span><input data-k="comp_rel_comp_to_npc" /></label>
-        </div>
-
-        <div class="grid2">
-          <div class="panel">
-            <div class="panelTitle">Modifiers: Current NPC → PC (following/responding to companion)</div>
-            <div class="grid3">
-              <label class="field"><span>6.2 Reaction</span><input data-k="npc_mod_6_2" /></label>
-              <label class="field"><span>12.1 Attitude</span><input data-k="npc_mod_12_1" /></label>
-              <label class="field"><span>12.2 Obj.</span><input data-k="npc_mod_12_2" /></label>
-              <label class="field"><span>12.3 Pitch/vol.</span><input data-k="npc_mod_12_3" /></label>
-
-              <label class="field"><span>13.1 PAS</span><input data-k="npc_mod_13_1" /></label>
-              <label class="field"><span>13.3 PAS</span><input data-k="npc_mod_13_3" /></label>
-              <label class="field"><span>13.5 PAS</span><input data-k="npc_mod_13_5" /></label>
-
-              <label class="field"><span>14.1 Response</span><input data-k="npc_mod_14_1" /></label>
-              <label class="field"><span>14.4 R. express</span><input data-k="npc_mod_14_4" /></label>
-
-              <label class="field"><span>17.1 Aggression</span><input data-k="npc_mod_17_1" /></label>
-              <label class="field"><span>17.2 Aggression</span><input data-k="npc_mod_17_2" /></label>
-              <label class="field"><span>17.3 Aggression</span><input data-k="npc_mod_17_3" /></label>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panelTitle">Modifiers: Companion → PC (following/responding to Current NPC)</div>
-            <div class="grid3">
-              <label class="field"><span>6.2 Reaction</span><input data-k="comp_mod_6_2" /></label>
-              <label class="field"><span>12.1 Attitude</span><input data-k="comp_mod_12_1" /></label>
-              <label class="field"><span>12.2 Obj.</span><input data-k="comp_mod_12_2" /></label>
-              <label class="field"><span>12.3 Pitch/vol.</span><input data-k="comp_mod_12_3" /></label>
-
-              <label class="field"><span>13.1 PAS</span><input data-k="comp_mod_13_1" /></label>
-              <label class="field"><span>13.3 PAS</span><input data-k="comp_mod_13_3" /></label>
-              <label class="field"><span>13.5 PAS</span><input data-k="comp_mod_13_5" /></label>
-
-              <label class="field"><span>14.1 Response</span><input data-k="comp_mod_14_1" /></label>
-              <label class="field"><span>14.4 R. express</span><input data-k="comp_mod_14_4" /></label>
-
-              <label class="field"><span>17.1 Aggression</span><input data-k="comp_mod_17_1" /></label>
-              <label class="field"><span>17.2 Aggression</span><input data-k="comp_mod_17_2" /></label>
-              <label class="field"><span>17.3 Aggression</span><input data-k="comp_mod_17_3" /></label>
-            </div>
-          </div>
-        </div>
-
-        <label class="field">
-          <span>Companion notes</span>
-          <textarea data-k="comp_notes" rows="3"></textarea>
-        </label>
-      </div>
-    </template>
 
     <script src="app.js"></script>
   </body>
